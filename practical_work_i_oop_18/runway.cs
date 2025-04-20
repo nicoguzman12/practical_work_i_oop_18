@@ -2,7 +2,7 @@ using System;
 
 namespace AirUFV
 {
-    public abstract class Runway //creating abstract class
+    public class Runway //creating class
     {
         public string Id { get; set; } //{get;set} to encapsulate the properties and do the code cleaner
         public RunwayStatus Status { get; set; }

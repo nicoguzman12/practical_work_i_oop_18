@@ -13,6 +13,8 @@ namespace AirUFV
             plane1.ShowInfo(); // calling the function used on each subclass
             plane2.ShowInfo();
             plane3.ShowInfo();
+
+            airp
         }
     }
 }
