@@ -14,7 +14,7 @@ namespace AirUFV
             plane2.ShowInfo();
             plane3.ShowInfo();
 
-            airp
+            
         }
     }
 }

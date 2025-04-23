@@ -42,11 +42,6 @@ namespace AirUFV
                 {
                     if (aircraft.Status == AircraftStatus.InFlight)
                     {
-<<<<<<< HEAD:practical_work_i_oop_18/src/Airport.cs
-
-=======
-                        // Update the distance traveled and fuel consumption
->>>>>>> 21fa0b01096cf609bac468f2f52b79d42255fcb8:practical_work_i_oop_18/Airport.cs
                         aircraft.UpdateDistanceAndFuel(0.25); //15 mins = 0.25 hours
                     }
 
@@ -58,11 +53,7 @@ namespace AirUFV
                             if (runway.RequestRunway(aircraft))
                             {
                                 aircraft.Status = AircraftStatus.Landing;
-<<<<<<< HEAD:practical_work_i_oop_18/src/Airport.cs
                                 break;
-=======
-                                break; // Once the runway us assigned break
->>>>>>> 21fa0b01096cf609bac468f2f52b79d42255fcb8:practical_work_i_oop_18/Airport.cs
                             }
                         }
                     }
