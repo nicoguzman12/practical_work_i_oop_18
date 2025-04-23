@@ -21,6 +21,7 @@ obj/
 *.sdf
 *.cache
 *.dbmdl
+*.sln
 
 ## Archivos de VSCode
 .vscode/
