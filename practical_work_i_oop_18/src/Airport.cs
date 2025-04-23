@@ -94,7 +94,7 @@ namespace AirUFV
             var parts = lines[i].Split(',');
 
             // Parse the common fields for all aircraft
-            int id = int.Parse(parts[0]); // Unique aircraft ID
+            int id = int.Parse(parts[0]); 
             AircraftStatus status = Enum.Parse<AircraftStatus>(parts[1]); 
             int distance = int.Parse(parts[2]); 
             int speed = int.Parse(parts[3]); 
