@@ -35,7 +35,7 @@ namespace AirUFV
                     Console.WriteLine($"    Aircraft on Runway: {runway.CurrentAircraft.Id}");
                 }
             }
-
+        }
             public void AdvanceTick() // Advance the airport state by one tick (15 minutes interval)
             {
                 foreach (var aircraft in Aircrafts)
@@ -73,6 +73,5 @@ namespace AirUFV
                     }
                 }
             }
-        }
     }
 }
