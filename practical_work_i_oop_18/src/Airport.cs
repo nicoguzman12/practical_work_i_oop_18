@@ -9,11 +9,12 @@ namespace AirUFV
 
         public List<Aircraft> Aircrafts {get; set; }
 
-        public Airport(int runwayCount)
+        public Airport(int runwayCount) //Constructor
         {
             Runways = new Runway[runwayCount, 1];
             Aircrafts = new List<Aircraft>();
 
+            // Initialize each runway and set its status to Free            
             for (int i = 0; i< runwayCount; i++)
             {
                 Runways[i, 0] = new Runway($"Runway-{i + 1}", RunwayStatus.Free);
@@ -21,7 +22,7 @@ namespace AirUFV
             }
         }
 
-        public void ShowStatus()
+        public void ShowStatus() // Display the current status
         {
             Console.WriteLine("Airport Status:");
 
@@ -29,19 +30,23 @@ namespace AirUFV
             {
                 Console.WriteLine($"Runway {runway.Id}: {runway.Status}");
 
-                if (runway.CurrentAircraft != null)
+                if (runway.CurrentAircraft != null) // If a runway currently has an aircraft, display the aircraft ID
                 {
                     Console.WriteLine($"    Aircraft on Runway: {runway.CurrentAircraft.Id}");
                 }
             }
 
-            public void AdvanceTick()
+            public void AdvanceTick() // Advance the airport state by one tick (15 minutes interval)
             {
                 foreach (var aircraft in Aircrafts)
                 {
                     if (aircraft.Status == AircraftStatus.InFlight)
                     {
+<<<<<<< HEAD:practical_work_i_oop_18/src/Airport.cs
 
+=======
+                        // Update the distance traveled and fuel consumption
+>>>>>>> 21fa0b01096cf609bac468f2f52b79d42255fcb8:practical_work_i_oop_18/Airport.cs
                         aircraft.UpdateDistanceAndFuel(0.25); //15 mins = 0.25 hours
                     }
 
@@ -53,7 +58,11 @@ namespace AirUFV
                             if (runway.RequestRunway(aircraft))
                             {
                                 aircraft.Status = AircraftStatus.Landing;
+<<<<<<< HEAD:practical_work_i_oop_18/src/Airport.cs
                                 break;
+=======
+                                break; // Once the runway us assigned break
+>>>>>>> 21fa0b01096cf609bac468f2f52b79d42255fcb8:practical_work_i_oop_18/Airport.cs
                             }
                         }
                     }
@@ -61,9 +70,9 @@ namespace AirUFV
                     else if (aircraft.Status == AircraftStatus.Landing)
                     {
                         
-                        aircraft.Status = AircraftStatus.OnGround;
+                        aircraft.Status = AircraftStatus.OnGround; //Transition from landing to be on the ground
 
-                        foreach (var runway in Runways)
+                        foreach (var runway in Runways) //Release the runway
                         {
                             if (runway.CurrentAircraft == aircraft)
                             {
