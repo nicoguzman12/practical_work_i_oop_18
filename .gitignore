@@ -1,1 +1,60 @@
+## Compilación
+bin/
 obj/
+[Bb]uild/
+[Bb]uild[Ll]og.*
+*.exe
+*.dll
+*.pdb
+*.app
+*.so
+*.dylib
+
+## Archivos de usuario de Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.vcxproj.*
+*.ncb
+*.opensdf
+*.sdf
+*.cache
+*.dbmdl
+
+## Archivos de VSCode
+.vscode/
+
+## Paquetes
+*.nupkg
+*.snupkg
+*.nuspec
+packages/
+# Para evitar ignorar un proyecto llamado packages
+!*/packages/*
+
+## Archivos de configuración local
+*.local.json
+
+## Publicaciones
+*.publish/
+publish/
+
+## Logs
+*.log
+
+## Archivos temporales
+*.tmp
+*.bak
+*.old
+*.swp
+
+## Archivos generados por herramientas
+Generated_Code/
+
+## Configuraciones de Rider
+.idea/
+
+## Archivos del sistema
+.DS_Store
+Thumbs.db
