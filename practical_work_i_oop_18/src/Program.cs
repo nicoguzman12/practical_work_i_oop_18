@@ -6,15 +6,30 @@ namespace AirUFV
     {
         public static void Main(string[] args)
         {
-            var plane1 = new CommercialAircraft(1, AircraftStatus.InFlight, 300, 900, 20000, 3.5, 15000, 180); // comercial
-            var plane2 = new CargoAircraft(2, AircraftStatus.InFlight, 500, 800, 25000, 4.2, 20000, 5000); // cargo
-            var plane3 = new PrivateAircraft(3, AircraftStatus.InFlight, 200, 700, 10000, 2.1, 8000, "Moisés Martínez"); // private
+            // Create an instance of the airport with 2 runways
+            Airport airport = new Airport(2);
 
-            plane1.ShowInfo(); // calling the function used on each subclass
-            plane2.ShowInfo();
-            plane3.ShowInfo();
+            // Ask the user for the path to the CSV file
+            Console.Write("Enter the path to the aircraft CSV file: ");
+            string filePath = Console.ReadLine();
 
-            
+            // Load aircraft from the file into the airport
+            airport.LoadAircraftFromFile(filePath);
+
+            // Show the current status of the airport
+            airport.ShowStatus();
+
+            // OPTIONAL: Advance the simulation by a few ticks
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine($"\n--- Tick {i + 1} ---");
+                airport.AdvanceTick();
+                airport.ShowStatus();
+            }
+
+            // END: Wait for user input to close
+            Console.WriteLine("\nSimulation complete. Press any key to exit.");
+            Console.ReadKey();
         }
     }
 }
