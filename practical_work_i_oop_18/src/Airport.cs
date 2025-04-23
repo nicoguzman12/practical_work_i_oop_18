@@ -5,16 +5,16 @@ namespace AirUFV
     public class Airport
     {
 
-        public Runway[,] Runways { get; set; }
+        public Runway[,] Runways { get; set; } //2d array of runways
 
-        public List<Aircraft> Aircrafts {get; set; }
+        public List<Aircraft> Aircrafts {get; set; } //all aircrafts curently managed by the airport
 
         public Airport(int runwayCount) //Constructor
         {
             Runways = new Runway[runwayCount, 1];
             Aircrafts = new List<Aircraft>();
 
-            // Initialize each runway and set its status to Free            
+            //initialize the runways and start in free status            
             for (int i = 0; i< runwayCount; i++)
             {
                 Runways[i, 0] = new Runway($"Runway-{i + 1}", RunwayStatus.Free);
@@ -22,7 +22,7 @@ namespace AirUFV
             }
         }
 
-        public void ShowStatus() // Display the current status
+        public void ShowStatus() //display the current status
         {
             Console.WriteLine("Airport Status:");
 
@@ -30,13 +30,13 @@ namespace AirUFV
             {
                 Console.WriteLine($"Runway {runway.Id}: {runway.Status}");
 
-                if (runway.CurrentAircraft != null) // If a runway currently has an aircraft, display the aircraft ID
+                if (runway.CurrentAircraft != null) //if a runway currently has an aircraft shows wich aircraft is on it
                 {
-                    Console.WriteLine($"    Aircraft on Runway: {runway.CurrentAircraft.Id}");
+                    Console.WriteLine($"Aircraft on Runway: {runway.CurrentAircraft.Id}");
                 }
             }
         }
-            public void AdvanceTick() // Advance the airport state by one tick (15 minutes interval)
+            public void AdvanceTick() //advance the airport state 15 mins by one tick 
             {
                 foreach (var aircraft in Aircrafts)
                 {
