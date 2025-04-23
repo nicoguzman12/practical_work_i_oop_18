@@ -73,17 +73,17 @@ namespace AirUFV
                     }
                 }
             }
-                    public void LoadAircraftFromFile(string filePath)
+                    public void LoadAircraftFromFile(Aircraft_Status.csv)
 {
     // Check if the file exists at the given path
-    if (!File.Exists(filePath))
+    if (!File.Exists(Aircraft_Status.csv))
     {
         Console.WriteLine("ERROR: File not found.");
         return; // Exit the method if the file doesn't exist
     }
 
     // Read all lines from the file (each line represents one aircraft)
-    string[] lines = File.ReadAllLines(filePath);
+    string[] lines = File.ReadAllLines(Aircraft_Status.csv);
 
     // Start at index 1 to skip the header line
     for (int i = 1; i < lines.Length; i++)
