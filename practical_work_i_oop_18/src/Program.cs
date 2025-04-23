@@ -11,15 +11,16 @@ namespace AirUFV
 
             // Ask the user for the path to the CSV file
             Console.Write("Enter the path to the aircraft CSV file: ");
-            string filePath = Console.ReadLine();
+            string Aircraft_Status.csv = Console.ReadLine();
 
             // Load aircraft from the file into the airport
-            airport.LoadAircraftFromFile(filePath);
+            airport.LoadAircraftFromFile(Aircraft_Status.csv);
 
             // Show the current status of the airport
             airport.ShowStatus();
 
-            // OPTIONAL: Advance the simulation by a few ticks
+
+            //Advance the simulation by a few ticks
             for (int i = 0; i < 3; i++)
             {
                 Console.WriteLine($"\n--- Tick {i + 1} ---");
@@ -27,7 +28,7 @@ namespace AirUFV
                 airport.ShowStatus();
             }
 
-            // END: Wait for user input to close
+            // Wait for user input to close
             Console.WriteLine("\nSimulation complete. Press any key to exit.");
             Console.ReadKey();
         }
