@@ -11,7 +11,7 @@ namespace AirUFV
 
         public Airport(int runwayCount)
         {
-            Runways = new Runway[runwayCount, 1]
+            Runways = new Runway[runwayCount, 1];
             Aircrafts = new List<Aircraft>();
 
             for (int i = 0; i< runwayCount; i++)
@@ -42,7 +42,7 @@ namespace AirUFV
                     if (aircraft.Status == AircraftStatus.InFlight)
                     {
 
-                        aircraft.UpdateDistanceAndFuel(0.25) //15 mins = 0.25 hours
+                        aircraft.UpdateDistanceAndFuel(0.25); //15 mins = 0.25 hours
                     }
 
                     else if (aircraft.Status == AircraftStatus.Waiting)
@@ -52,7 +52,7 @@ namespace AirUFV
                         {
                             if (runway.RequestRunway(aircraft))
                             {
-                                aircraft.Status = AircraftStatus.Landing
+                                aircraft.Status = AircraftStatus.Landing;
                                 break;
                             }
                         }
