@@ -6,9 +6,10 @@ namespace AirUFV
     {
         public int NumPassengers { get; set; }
 
-        public CommercialAircraft(int id, AircraftStatus status, int distance, int speed, double fuelCapacity, double fuelConsumption, double currentFuel, int numPassengers) : base(id, status, distance, speed, fuelCapacity, fuelConsumption, currentFuel){ // with "base" we go back to the pricipal class and reuse the properties
+        public CommercialAircraft(int id, AircraftStatus status, int distance, int speed, double fuelCapacity, double fuelConsumption, double currentFuel, int numPassengers) : base(id, status, distance, speed, fuelCapacity, fuelConsumption, currentFuel)
+        { // with "base" we go back to the pricipal class and reuse the properties
             NumPassengers = numPassengers; 
-    }
+        }
 
         public override void ShowInfo()
         {
