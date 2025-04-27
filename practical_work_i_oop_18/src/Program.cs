@@ -10,9 +10,9 @@ namespace AirUFV
             Airport airport = new Airport(2);
 
             // Ask the user for the path to the CSV file
+            
             Console.Write("Enter the path to the aircraft CSV file: (Aircraft_Status.csv) ");
             string filePath = Console.ReadLine();
-
             // Load aircraft from the file into the airport
             airport.LoadAircraftFromFile(filePath);
 
