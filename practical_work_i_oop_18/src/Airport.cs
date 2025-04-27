@@ -35,6 +35,12 @@ namespace AirUFV
                     Console.WriteLine($"Aircraft on Runway: {runway.CurrentAircraft.Id}");
                 }
             }
+
+            Console.WriteLine("Aircrafts at the airport:");
+            foreach (var aircraft in Aircrafts)
+            {
+                aircraft.ShowInfo(); //Show each aircraft infromation
+            }
         }
             public void AdvanceTick() //advance the airport state 15 mins by one tick 
             {
@@ -79,14 +85,14 @@ namespace AirUFV
         {
 
         // Check if the file exists at the given path
-        if (!File.Exists(Aircraft_Status.csv))
+        if (!File.Exists(filePath))
         {
             Console.WriteLine("ERROR: File not found.");
             return; // Exit the method if the file doesn't sexist
         }
 
         // Read all lines from the file (each line represents one aircraft)
-        string[] lines = File.ReadAllLines(Aircraft_Status.csv);
+        string[] lines = File.ReadAllLines(filePath);
 
         // Start at index 1 to skip the header line
         for (int i = 1; i < lines.Length; i++)
